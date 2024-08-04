@@ -1,19 +1,11 @@
-const box = document.getElementById("box");
-const code= document.getElementById("code");
-const btn= document.getElementById("color");
+function getNewColor() {
+    var symbols,color;
+    symbols = "0123456789ABCDEF";
 
-btn.addEventListener('click', colorGenerate);
+    color ="#"
+    for(var i =0;i<6;i++){
+        color = color + symbols[Math.floor(Math.random() * 16)];
 
-function colorGenerate(){
-let value ='0123456789ABCDEF';
-let color='#';
-
-
-for(let i=0;i<6;i++){
-    let randomValue = Math.floor(Math.random()*16);
-    color += value[randomValue];
-
-}
-code.innerHTML=color;
-box.style.backgroundColor = color;
+    }
+    document.body.style.background = color;
 }
